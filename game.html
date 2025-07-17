@@ -2,10 +2,82 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Juego de Negocios</title>
+  <title>Ronda 1 - Simulador</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenido al Simulador</h1>
-  <p>Estamos preparando tu empresa... 🚀</p>
+  <div class="container">
+    <h1>Ronda 1 - Bienvenido/a</h1>
+    <p>RUT: <span id="rutSpan"></span></p>
+
+    <h2>📊 Estado Financiero Inicial</h2>
+    <div id="estado-financiero">
+      <h3>Estado de Resultados</h3>
+      <ul>
+        <li>Ventas: $100.000</li>
+        <li>Costos: $60.000</li>
+        <li>Utilidad antes de impuestos: $40.000</li>
+      </ul>
+
+      <h3>Balance General</h3>
+      <ul>
+        <li>Activos: $150.000</li>
+        <li>Pasivos: $70.000</li>
+        <li>Patrimonio: $80.000</li>
+      </ul>
+
+      <h3>🔍 Indicadores</h3>
+      <ul>
+        <li>Liquidez: 1.5</li>
+        <li>Solvencia: 1.14</li>
+        <li>ROI: 26.6%</li>
+        <li>ROS: 40%</li>
+        <li>ROE: 50%</li>
+      </ul>
+    </div>
+
+    <h2>🧠 Tus decisiones para esta ronda</h2>
+    <form id="form-ronda">
+      <label>Producción esperada (unidades):</label><br>
+      <input type="number" name="produccion" required><br><br>
+
+      <label>Estrategia de Marketing (elige una por P):</label><br>
+      <select name="precio">
+        <option value="alto">Precio Alto</option>
+        <option value="medio" selected>Precio Medio</option>
+        <option value="bajo">Precio Bajo</option>
+      </select><br>
+
+      <select name="plaza">
+        <option value="local">Distribución Local</option>
+        <option value="regional" selected>Regional</option>
+        <option value="nacional">Nacional</option>
+      </select><br>
+
+      <select name="producto">
+        <option value="premium">Premium</option>
+        <option value="estandar" selected>Estándar</option>
+        <option value="economico">Económico</option>
+      </select><br>
+
+      <select name="promocion">
+        <option value="tv">TV</option>
+        <option value="rrss" selected>Redes Sociales</option>
+        <option value="eventos">Eventos</option>
+      </select><br><br>
+
+      <label>Tipo de Financiamiento:</label><br>
+      <select name="financiamiento">
+        <option value="propio">Capital Propio</option>
+        <option value="prestamo" selected>Préstamo</option>
+        <option value="otro">Otro</option>
+      </select><br><br>
+
+      <button type="submit">Guardar y continuar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
