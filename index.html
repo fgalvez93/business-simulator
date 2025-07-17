@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Negocios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial; text-align: center; padding: 2rem; }
+    input, button { padding: 0.5rem; font-size: 1rem; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Simulador de Negocios</h1>
+  <p>Ingresa tu RUT sin puntos, sin guion ni dígito verificador:</p>
+  <input type="text" id="rut" placeholder="Ej: 12345678">
+  <br>
+  <button onclick="validarRUT()">Ingresar</button>
+
+  <script>
+    function validarRUT() {
+      const rut = document.getElementById('rut').value.trim();
+      if (!/^\d{7,9}$/.test(rut)) {
+        alert("RUT inválido. Debe tener entre 7 y 9 dígitos, sin puntos ni guion.");
+        return;
+      }
+      localStorage.setItem('rut', rut); // guardamos el rut para usar en el juego
+      window.location.href = "game.html";
+    }
+  </script>
+</body>
+</html>
